@@ -1,6 +1,6 @@
 # Estudos de Segurança da Informação
 
-Oii! Sou estudante de Análise e Desenvolvimento de Sistemas (4º semestre) e iniciante em segurança da informação.
+Oii! Sou estudante de Análise e Desenvolvimento de Sistemas (4º semestre) e estou iniciando o 1º semestre em segurança da informação.
 
 Este repositório é o meu diário de estudos: aqui registro o que aprendo, com experimentos práticos e explicações.
 
