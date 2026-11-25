@@ -8,7 +8,7 @@ Este repositório é o meu diário de estudos: aqui registro o que aprendo, com 
 
 Construir uma base sólida para seguir carreira em segurança da informação.
 
-## 📚 Trilha de estudos
+## Trilha de estudos
 
 | Tema | O que estudei | Status |
 |---|---|---|
