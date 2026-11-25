@@ -1,26 +1,23 @@
-# Estudos de Segurança da Informação
+# 04 · TOTP e MFA
 
-Oii! Sou estudante de Análise e Desenvolvimento de Sistemas (4º semestre) e estou iniciando o 1º semestre em segurança da informação.
+## O que é
+**TOTP** (Time-based One-Time Password) é o código de 6 dígitos que muda a cada 30 segundos nos aplicativos autenticadores.
 
-Este repositório é o meu diário de estudos: aqui registro o que aprendo, com experimentos práticos e explicações.
+## Como funciona
+1. Servidor e celular compartilham um **segredo** (o QR code do cadastro).
+2. Ambos calculam: `HMAC(segredo, horário ÷ 30)`.
+3. Sem trocar mensagens, os dois chegam ao **mesmo número**.
 
-## Objetivo
+## Experimento
+O arquivo [`totp.py`](totp.py) reimplementa o algoritmo em Python. Cadastrei o segredo de teste num app autenticador e **os códigos ficaram idênticos**.
 
-Construir uma base sólida para seguir carreira em segurança da informação.
+## Comparação dos métodos
 
-## Trilha de estudos
-
-| Tema | O que estudei | Status |
+| Método | Ponto forte | Ponto fraco |
 |---|---|---|
-| Tríade CIA | Confidencialidade, integridade e disponibilidade | ✅ |
-| Senhas e hashing | Hash, salt, PBKDF2 e por que a lentidão protege | ✅ |
-| Phishing | Leitura do domínio real, typosquatting e ataque homógrafo | ✅ |
-| DNS | Resolvedor x autoritativo, NS, CNAME, round-robin (`nslookup`) | ✅ |
-| MFA / TOTP | Como funciona o código de 6 dígitos, AiTM e passkeys | ✅ ([ver pasta](04-totp-mfa)) |
-| Redes e portas | Portas abertas, `netstat`, `Test-NetConnection` | 🔄 em andamento |
+| SMS | Fácil | SIM swap e interceptação |
+| App (TOTP) | Funciona offline | Não resiste a phishing em tempo real (AiTM) |
+| Passkey / chave física (FIDO2) | Só responde ao domínio real | Exige dispositivo compatível |
 
-
-## Ética
-
-Todos os experimentos são feitos apenas em ambiente próprio ou com autorização. Nada aqui deve ser usado contra sistemas de terceiros.
-
+## O que aprendi (com minhas palavras)
+ O TOTP é um método de autenticação em dois fatores (A2F). O app e o servidor compartilham uma chave secreta e, a partir dela e do horário atual, ambos calculam um código de uso único que dura geralmente 30 segundos. Ele protege contra invasões em que o atacante só descobriu a senha. Porém, não impede ataques com sites espelhados (AiTM): a vítima digita o código na página falsa e o atacante o usa imediatamente no site verdadeiro. Já a passkey só funciona no domínio real cadastrado, então na página falsa ela simplesmente não responde.
