@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/35390474/README.md)
 # 04 · TOTP e MFA
 
 ## O que é
