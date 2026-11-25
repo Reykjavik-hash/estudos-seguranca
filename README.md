@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/35390338/README.2.md)
 # Estudos de Segurança da Informação
 
 Oii! Sou estudante de Análise e Desenvolvimento de Sistemas (4º semestre) e iniciando o 1º semestre em segurança da informação.
