@@ -10,6 +10,7 @@
 
 ## Experimento
 O arquivo [`totp.py`](totp.py) reimplementa o algoritmo em Python. Cadastrei o segredo de teste num app autenticador e **os códigos ficaram idênticos**.
+![Execução do totp.py gerando o código de 6 dígitos](totp-codigo.png)
 
 ## Comparação dos métodos
 
